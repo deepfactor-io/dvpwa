@@ -40,4 +40,4 @@ jobs:
             else
               repoVersion=${{ github.ref_name }}
             fi
-            docker run --pull=always --rm -e DF_RUN_TOKEN=$DF_RUN_TOKEN -v $projDir:/home/projdir public.ecr.aws/deepfactor/df/runtime:$DFCTL_VERSION dfctl scan -s fs -a $appName -c $compName -V $repoVersion -p $alertPolicy -R $compName  -X 1 /home/projdir
+            docker run --pull=always --rm -e DF_RUN_TOKEN=$DF_RUN_TOKEN -v $projDir:/home/projdir public.ecr.aws/deepfactor/df/runtime:$DFCTL_VERSION dfctl scan -s fs -a $appName -c $compName -V $repoVersion -p $alertPolicy -R $compName /home/projdir
